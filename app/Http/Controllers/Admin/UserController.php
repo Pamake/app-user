@@ -21,6 +21,8 @@ class UserController extends Controller
     $dati = $request->all();
     $img = Storage::put('profile_pictures',$dati['profile_img']);
 
+    // if per aggiornamento foto profilo
+
     if(!empty(Auth::user()->userDetail)){
 
       Auth::user()->userDetail->profile_picture = $img;
