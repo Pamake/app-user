@@ -36,4 +36,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // relazione 1 a 1 aggiunta anche da questo lato model
+    public function userDetail(){
+      // AAAAAAAAAAAAAA in App maiuscolooooo
+      return $this->hasOne('App\userDetail');
+    }
 }

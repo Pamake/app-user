@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin/profile', 'Admin\UserController@viewProfile')->middleware('auth')->name('admin.profile');
+Route::post('/admin/saveProfilePicture','Admin\UserController@saveProfilePicture')->middleware('auth')->name('admin.profile_picture');
